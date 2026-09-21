@@ -1,0 +1,16 @@
+citizen will register these info 
+names,id,date of birth,employment,name of insurance,phone number,renting  or not and 
+they can add any number of familly members all at once names,id if they have it,date of birth,employment,name of insurance,phone number.
+
+
+
+install node js and packages
+create project and install tailwind css in project terminal
+install git on laptop for using github
+
+
+what to present 
+problem statement
+solution
+use of the system
+business model

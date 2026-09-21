@@ -1,0 +1,98 @@
+option a for step 1.and for step 2 it is called umuturage mis..it is made for rwandan citizens for them to register
+ or de-register themselves once they re-allocate to other locations and cell officers will approve their registration.
+a user will have to create an account and login to do all operations and even view dashboard for history.it will have 
+admin,cell officers,sector officers,district officers accounts,citizen accounts and it will record names,id,phone number
+ and details of family members after registration it will display all leaders info
+
+
+
+
+
+**Use Case Diagram Specifications**
+
+* **System Name:** Umuturage MIS
+* **Primary Objective:** Streamline citizen relocation, registration, and management across local administrative levels in Rwanda.
+
+---
+
+### **Actors**
+
+* **Citizen:** Registers/logs in, submits relocation/deregistration requests, manages family member details, views history on the dashboard, and accesses local leaders' contact details.
+* **Cell Officer:** Reviews, verifies, and approves or rejects citizen registration/relocation requests within their cell.
+* **Sector Officer:** Oversees cell-level operations, views aggregated relocation reports, and manages administrative escalations.
+* **District Officer:** Monitors district-wide relocation trends, manages sector-level administrative data, and views high-level reporting.
+* **Admin:** Manages system user roles, configures administrative units, oversees system logs, and maintains security settings.
+
+---
+
+### **Use Cases Grouped by Module**
+
+#### **1. Authentication & Account Management**
+
+* **Create Account:** Citizens register using personal identifiers (Full Name, National ID, Phone Number).
+* **Login / Logout:** Authenticates all actors (Citizens, Officers, Admin) with role-based access.
+* **Manage Profile:** Citizens update their personal details and add/edit family members.
+
+#### **2. Relocation & Registration Module**
+
+* **Submit Relocation Request:** Citizen initiates a registration request for a new location or a deregistration from a current location.
+* **Attach Family Members:** Citizen links dependent details to the relocation application.
+* **Review & Approve Registration:** Cell Officer verifies the submitted IDs and details, approving or rejecting the request.
+
+#### **3. Information & Dashboard Module**
+
+* **View Personal Dashboard:** Citizen tracks application history, status (Pending/Approved), and relocation logs.
+* **View Leadership Information:** Displays contact and profile details of assigned local leaders upon successful registration.
+* **View Administrative Analytics:** Sector and District Officers access population movement and relocation statistics.
+
+#### **4. System Administration**
+
+* **Manage System Users:** Admin creates, updates, and assigns administrative roles for Cell, Sector, and District Officers.
+* **Audit & System Logs:** Admin monitors overall system operations and system audit trails.
+
+---
+
+### **Use Case Relationships & Inclusions**
+
+* **`<<include>>` Relationships:**
+* *Submit Relocation Request* `<<include>>` *Authenticate User*
+* *Approve Registration* `<<include>>` *Authenticate User*
+* *View Leadership Information* `<<include>>` *Submit Relocation Request* (triggered/unlocked upon completion)
+
+
+* **`<<extend>>` Relationships:**
+* *Attach Family Members* `<<extend>>` *Submit Relocation Request* (optional step based on household status)
+* *Reject Application* `<<extend>>` *Review & Approve Registration* (executed if details fail validation)
+
+statictics
+pwd: statistics
+
+admin
+Adelin
+0784877434
+
+cell officer
+Nkangura J Pierre
+
+Cell officer · 0788854356
+password: Nkangura
+1197080059544510
+
+Meek
+pwd:Meek123
+Cell officer · 0783423232
+1199833728393029
+
+Jane M
+1197998983678463
+pwd: 0785555555
+cell officer
+
+Prosper
+Village officer · 0788884444
+1198039763738390
+pwd: Prosper
+
+
+Test backend status:
+Invoke-RestMethod http://localhost:5000/api/health
